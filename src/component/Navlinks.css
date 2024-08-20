@@ -1,0 +1,21 @@
+/* Navbar.css */
+.submenu {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    visibility: hidden; /* Đảm bảo phần tử không thể nhấp vào khi không hiển thị */
+  }
+  
+  .group:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+  }
+  .submenu-mobile {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    visibility: hidden; /* Đảm bảo phần tử không thể nhấp vào khi không hiển thị */
+  }
+  
+  .group:hover .submenu-mobile {
+    opacity: 1;
+    visibility: visible;
+  }
