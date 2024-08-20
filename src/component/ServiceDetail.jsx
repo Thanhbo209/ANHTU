@@ -53,7 +53,7 @@ import './ServiceDetail.css';
 
 const ServiceDetail = () => {
     const { serviceName } = useParams();
-    const [selectedService, setSelectedService] = useState(null);
+ 
     const settings = {
         dots: true,
         infinite: true,
@@ -1039,11 +1039,6 @@ const ServiceDetail = () => {
      
     // Lấy dữ liệu mô tả dịch vụ dựa trên serviceName từ URL
     const service = serviceDescriptions[serviceName];
-
-
-  
-   
-
     // Chỉ xử lý định dạng mô tả nếu service tồn tại
     const formattedDescription = service ? service.description.replace(/\n/g, '<br />') : '';
    
