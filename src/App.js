@@ -1,7 +1,7 @@
 
 import './App.css';
 import Navbar from './component/Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {  Routes, Route } from 'react-router-dom';
 import './index.css';
 import ServiceDetail from './component/ServiceDetail';
 import MainPage from './component/MainPage';
@@ -14,6 +14,8 @@ function App() {
   return (
     <div className="App">
 <Navbar/>
+
+
 <Routes>
 <Route path="/chi-tiet" element={<ServicesSection />}/>
 <Route index="/" element={<MainPage />}/>
@@ -22,6 +24,7 @@ function App() {
 <Route path="/lien-he" element={<Contact />}/>
 <Route path="/:serviceName" element={<ServiceDetail />} />
 </Routes>
+
     </div>
   );
 }

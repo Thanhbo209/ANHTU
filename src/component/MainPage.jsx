@@ -223,19 +223,19 @@ const MainPage = () => {
       <div className="container mx-auto text-center">
        
         <button onClick={ handleScrollToTopAndReload} className="text-white hover:text-teal-500 focus:outline-none">
-        <i class="fa-solid fa-caret-up"></i> {/* Mũi tên lên */}
+        <i className="fa-solid fa-caret-up"></i> {/* Mũi tên lên */}
         </button>
     
 
         <div className="flex justify-center space-x-8 my-6 text-3xl gap-10">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-teal-500">
-          <i class="fa-brands fa-facebook-f"></i>
+          <i className="fa-brands fa-facebook-f"></i>
           </a>
           <a href="https://codepen.io" target="_blank" rel="noopener noreferrer" className="hover:text-teal-500">
-          <i class="fa-solid fa-phone"></i>
+          <i className="fa-solid fa-phone"></i>
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-teal-500">
-          <i class="fa-solid fa-comment"></i>
+          <i className="fa-solid fa-comment"></i>
           </a>
         </div>
         <div className="flex justify-center">

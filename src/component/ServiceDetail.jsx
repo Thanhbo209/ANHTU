@@ -1041,15 +1041,8 @@ const ServiceDetail = () => {
     const service = serviceDescriptions[serviceName];
 
 
-    const handleServiceClick = (serviceKey) => {
-        if (selectedService === serviceKey) {
-            setSelectedService(null);  // Nếu click lại vào mục đang chọn, sẽ ẩn nó đi
-        } else {
-            setSelectedService(serviceKey);  // Chọn mục để hiển thị
-        }
-    };
-    
-    const serviceData = serviceDescriptions[selectedService];
+  
+   
 
     // Chỉ xử lý định dạng mô tả nếu service tồn tại
     const formattedDescription = service ? service.description.replace(/\n/g, '<br />') : '';

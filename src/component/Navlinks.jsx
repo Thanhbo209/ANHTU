@@ -89,38 +89,35 @@ const Navlinks = () => {
         },
     ];
     return (
-        links.map((linkItem) =>(
-            <div className="">
+        links.map((linkItem, index) => (
+            <div key={index} className="">
                 <div className="px-3 text-left md:cursor-pointer group">
                     <h1 className='py-7 cursor-pointer flex justify-between items-center md:pr-0 pr-5 group' onClick={() =>
-                    heading !== linkItem.name ? setHeading(linkItem.name) : setHeading('')
+                        heading !== linkItem.name ? setHeading(linkItem.name) : setHeading('')
                     }>
-
-
                         {linkItem.name}
                         <span className='text-xl md:hidden inline'>
-                        <i className={`${heading === linkItem.name ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"}`}></i>
+                            <i className={`${heading === linkItem.name ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"}`}></i>
                         </span>
                         <span className='text-xl md:mt-1 md:ml-2  md:block hidden group-hover:rotate-180 group-hover:-mt-2 '>
-                        <i className="fa-solid fa-chevron-down" ></i>
+                            <i className="fa-solid fa-chevron-down" ></i>
                         </span>
                     </h1>
-                    {linkItem.submenu  && (
-                        <div className="submenu ">
-                            <div className="absolute top-14 hidden group-hover:md:block hover:md:block  ">
-                            <div className="py-1">
-                            <div className="w-5 h-5 left-2  absolute bg-[#55ead4] shadow-2xl mt-1 rotate-45 "></div>
-                            </div>
-                                <div className="bg-[#ffffff] p-5 grid grid-cols-3 gap-10 shadow-2xl rounded-xl ">
-                                    {linkItem.sublinks.map((mysublinks)=> (
-                                        <div className="">
-                                        <h1 className="text-lg font-bold">{mysublinks.Head}</h1>
-                                        {mysublinks.sublink.map((slink) => (
-                                            <li className='text-sm text-gray-600 my-2.5'>
-                                            <Link to={slink.links} className='text-[#6F56A6] hover:text-black text-base'>{slink.name}</Link>
-
-                                            </li>
-                                        ))}
+                    {linkItem.submenu && (
+                        <div className="submenu">
+                            <div className="absolute top-14 hidden group-hover:md:block hover:md:block">
+                                <div className="py-1">
+                                    <div className="w-5 h-5 left-2  absolute bg-[#55ead4] shadow-2xl mt-1 rotate-45 "></div>
+                                </div>
+                                <div className="bg-[#ffffff] p-5 grid grid-cols-3 gap-10 shadow-2xl rounded-xl">
+                                    {linkItem.sublinks.map((mysublinks, subIndex) => (
+                                        <div key={subIndex} className="">
+                                            <h1 className="text-lg font-bold">{mysublinks.Head}</h1>
+                                            {mysublinks.sublink.map((slink, slinkIndex) => (
+                                                <li key={slinkIndex} className='text-sm text-gray-600 my-2.5'>
+                                                    <Link to={slink.links} className='text-[#6F56A6] hover:text-black text-base'>{slink.name}</Link>
+                                                </li>
+                                            ))}
                                         </div>
                                     ))}
                                 </div>
@@ -130,33 +127,30 @@ const Navlinks = () => {
                 </div>
                 {/* responsive  */}
                 <div className={`${heading === linkItem.name ? 'md:hidden' : 'hidden'}`}>
-                {/* sublinks */}
-                    {
-                        linkItem.sublinks.map((slinks)=> (
+                    {/* sublinks */}
+                    {linkItem.sublinks.map((slinks, subIndex) => (
+                        <div key={subIndex} className="">
                             <div className="">
-                                <div className="">
-                                    <h1 onClick={() => subheading !== slinks.Head 
-                                    ? setSubHeading(slinks.Head) 
+                                <h1 onClick={() => subheading !== slinks.Head
+                                    ? setSubHeading(slinks.Head)
                                     : setSubHeading('')
-                                    } 
-                                    className='py-4 pl-7 font-semibold md:pr-0 pr-5 py-7 cursor-pointer flex justify-between items-center md:pr-0 pr-5'>
+                                }
+                                    className=' pl-7 font-semibold  py-7 cursor-pointer flex justify-between items-center md:pr-0 pr-5'>
                                     {slinks.Head}
-
                                     <span className='text-xl md:mt-1 md:ml-2 inline'>
-                                         <i className={`${subheading === slinks.Head ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"}`}></i>
+                                        <i className={`${subheading === slinks.Head ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"}`}></i>
                                     </span>
-                                    </h1>
-                                    <div className={` ${ subheading === slinks.Head ? "md:hidden" : "hidden"}`}>
-                                        {slinks.sublink.map((slink) => (
-                                            <li className='py-3 pl-14 '>
-                                                <Link to = {slink.links} className='hover:text-blue-400'>{slink.name}</Link>
-                                            </li>
-                                        ))}
-                                    </div>
+                                </h1>
+                                <div className={` ${subheading === slinks.Head ? "md:hidden" : "hidden"}`}>
+                                    {slinks.sublink.map((slink, slinkIndex) => (
+                                        <li key={slinkIndex} className='py-3 pl-14'>
+                                            <Link to={slink.links} className='hover:text-blue-400'>{slink.name}</Link>
+                                        </li>
+                                    ))}
                                 </div>
                             </div>
-                        ))
-                    }
+                        </div>
+                    ))}
                 </div>
             </div>
         ))

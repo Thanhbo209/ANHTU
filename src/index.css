@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 /* Bạn có thể thêm CSS tùy chỉnh của bạn ở đây */
 
@@ -28,9 +26,4 @@ code {
 ::-webkit-scrollbar-thumb {
   background: gray;
   border-radius: 2px;
-}
-.gradient-text {
-  background: linear-gradient(90deg, red, pink, black, blue);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
