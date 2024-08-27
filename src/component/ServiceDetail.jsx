@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Element, scroller } from 'react-scroll';
 
 // Import CSS Swiper
 import "swiper/css";
@@ -48,6 +49,15 @@ import ytSub from '../picture/pngtree-subscribe-click-the-reminder-icon-png-imag
 import ytView  from '../picture/402293.png';
 import ytLike from '../picture/3d-isolated-social-media-icon-free-png.webp';
 import ytCmt from '../picture/comment-button-8077148_1280.webp';
+import LostEmailAndPhoneNumber from '../picture/2024_2_15_638436116382945853_facebook-nen.jpg';
+import KetSatTim from '../picture/cach-mo-khoa-fb-ket-sat-tim.jpg';
+import ViPhamCongDong from '../picture/700555033934882813675544769473805393330176n-15679156662481424791802.webp';
+import FBProtect from '../picture/facebook-lock-account-to-protect_1280x1036-800-resize.jpg';
+import FBDisabled from '../picture/cach-khoi-phuc-tai-khoan-facebook-bi-vo-hieu-hoa-tam-thoi-vao-nam-2024-9505.jpg';
+import FBCopyRighted from '../picture/u8Jq-link-mo-khoa-facebook-bi-vo-hieu-hoa-disable-gui-id-1.jpg';
+import FBLoginCode from '../picture/6099011_ma-dang-nhap-facebook-la-gi-1.jpg';
+import FBIdentity from '../picture/images.png';
+import FB180Days from '../picture/Tai-Khoan-Se-Bi-Vo-Hieu-Hoa-Sau-180-Ngay-Nua.jpg';
 import './ServiceDetail.css';
 
 
@@ -100,55 +110,55 @@ const ServiceDetail = () => {
                     subTitle: ' Facebook bị hack thay đổi Email và SĐT',
                     price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Bị thay đổi Email và SĐT<br />☛ Nguyên nhân: Có thể là do bạn đã truy cập vào link lạ hoặc bị cài 1 phần mềm theo dõi Facebook nào đó<br />☛ Thời gian hỗ trợ: 5 phút  - 24 giờ<br />☛ Yêu cầu: Còn giữ thiết bị dăng nhập tài khoản bị mất',
-                    image: checkTick,
+                    image: LostEmailAndPhoneNumber,
                 },
                 {
                     subTitle: ' Facebook bị khóa két sắt màu tím',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Bị khóa Facebook và hiện lên màu tím<br />☛ Nguyên nhân: Do bị người khác report hoặc vi phạm tiêu chuẩn cộng đồng<br />☛ Thời gian hỗ trợ: 5 phút  - 24 giờ <br />☛ Yêu cầu: Còn giữ thiết bị dăng nhập tài khoản bị mất',
-                    image: checkTick,
+                    image: KetSatTim,
                 },
                 {
                     subTitle: 'Facebook vi phạm tiêu chuẩn cộng đồng',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Thường xuyên vi phạm tiêu chuẩn cộng đồng<br />☛ Nguyên nhân: Bài viết về xuất khẩu, tuyển người, chính trị và những nội dung nhạy cảm<br />☛ Thời gian hỗ trợ: Tùy vào mức độ <br />☛ Yêu cầu: Ngày/Tháng/Năm sinh trùng với giấy tờ',
-                    image: checkTick,
+                    image: ViPhamCongDong,
                 },
                 {
                     subTitle: 'Facebook bị khóa do Protect',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Không vào được Facebook không rõ lí do<br />☛ Nguyên nhân: Bị xâm phạm hoặc spam quá nhiều<br />☛ Thời gian hỗ trợ: 30 phút - 1 tiếng <br />☛ Yêu cầu: Có Email liên kết với Facebook',
-                    image: checkTick,
+                    image: FBProtect,
                 },
                 {
                     subTitle: 'Facebook bị vô hiệu hóa vĩnh viễn',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Bị vô hiệu hóa không rõ lí do<br />☛ Nguyên nhân: Vi phạm chính sách Facebook (tình tiết nặng)<br />☛ Thời gian hỗ trợ: 1 - 30 ngày <br />☛ Yêu cầu: Có Email liên kết với Facebook',
-                    image: checkTick,
+                    image: FBDisabled,
                 },
                 {
                     subTitle: 'Facebook vô hiệu hóa bản quyền',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Nhận được Email báo vi phạm do bản quyền bên thứ ba<br />☛ Nguyên nhân: Đăng bài có liên quan đén bản quyền của thương hiệu nào đó<br />☛ Thời gian hỗ trợ: 1 - 30 Ngày <br />☛ Yêu cầu: Có Email liên kết với Facebook',
-                    image: checkTick,
+                    image: FBCopyRighted,
                 },
                 {
                     subTitle: 'Facebook bị mã đăng nhập',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Facebook yêu cầu mã khi đăng nhập<br />☛ Nguyên nhân: Mất thông tin hoặc bị hacker tấn công <br />☛ Thời gian hỗ trợ: 5 phút - 24 giờ <br />☛ Yêu cầu: Nhớ ngày tháng năm sinh trên Facebook',
-                    image: checkTick,
+                    image: FBLoginCode,
                 },
                 {
                     subTitle: 'Facebook bị khóa bắt xác minh danh tính',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Bắt xác minh khi đăng nhập<br />☛ Nguyên nhân: Có 3 nguyên nhân chính:<br />- Bị report <br />- Hoạt động vi phạm nào đó <br />- Đăng nhập trên thiết bị lạ <br />☛ Thời gian hỗ trợ: 5 phút - 24 giờ <br />☛ Yêu cầu: Còn giữ Email và thiết bị đăng nhập tài khoản Facebook đó',
-                    image: checkTick,
+                    image: FBIdentity,
                 },
                 {
                     subTitle: 'Facebook bị vô hiệu hóa 180 ngày',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Dấu hiệu: Nhận thông báo bị vô hiệu hóa do vi phạm <br />☛ Nguyên nhân: Do vi phạm bản quyền, chưa đủ tuổi hoặc vi phạm chính sách Facebook<br />☛ Thời gian hỗ trợ: 1 - 30 ngày <br />☛ Yêu cầu: Còn Email liên kết với tài khoản Facebook',
-                    image: checkTick,
+                    image: FB180Days,
                 },
             ]
         },
@@ -160,17 +170,14 @@ const ServiceDetail = () => {
                 {
                     subTitle: 'Bị Hack Facebook đồi email và số điện thoại',
                     description: 'Bị hack và đổi hết thông tin, hơn nữa còn bị người hack mang đi để làm mục đích xấu xa <br/> Cần giấy tờ tùy thân trùng với thông tin trên Facebook',
-                    image: checkTick,
                 },
                 {
                     subTitle: 'Bị Hack Facebook đồi email và số điện thoại + bị khóa',
                     description: 'Thông thường khi bị hack Facebook hacker sẽ cố tình làm cho Facebook của bạn vừa bị khóa + bị mã xác thực <br / > Cần giấy tờ tùy thân trùng với thông tin trên Facebook',
-                    image: checkTick,
                 },
                 {
                     subTitle: 'Lấy lại Facebook bị hack + bảo mật',
                     description: 'Hỗ trợ lấy lại Facebook + bảo mật nick dối với những nick Facebook có tầm ảnh hưởng hoặc làm ăn kinh doanh trên đó <br /> Cần giấy tờ tùy thân trùng với thông tin trên Facebook',
-                    image: checkTick,
                 }
             ]
         },
@@ -183,19 +190,19 @@ const ServiceDetail = () => {
                     subTitle: 'Bị khóa két sắt tím do Spam hoặc bị Hack',
                      price: 'Liên hệ để báo giá',
                     description: 'Thay đổi Email hoặc đăng nhập trên thiết bị lạ hoặc tự dưng thấy <br/> Facebook mình bị khóa dạng két sắt tím',
-                    image: checkTick,
+                    
                 },
                 {
                     subTitle: 'Bị khóa két sắt tím (với Facebook có tầm ảnh hưởng)',
                      price: 'Liên hệ để báo giá',
                     description: 'Thông thường khi bị khóa két sắt tím những Facebook có tầm ảnh hưởng hoặc kinh doanh trên đó sẽ bị khó hơn',
-                    image: checkTick,
+                    
                 },
                 {
                     subTitle: 'Bị khóa két sắt tím do bị quá lâu',
                      price: 'Liên hệ để báo giá',
                     description: 'Bị khóa két sắt tím từ 1-2 tuần trở lên đươc gọi là trường hợp khó, tình trạng này chỉ còn cách treo bên hệ thống của chúng tôi. Thời gian làm cũng sẽ lâu hơn',
-                    image: checkTick,
+                    
                 }
             ]
         },
@@ -208,19 +215,19 @@ const ServiceDetail = () => {
                     subTitle: 'Bị mất mật khẩu do bị quên',
                      price: 'Liên hệ để báo giá',
                     description: 'Bị quên mất mật khẩu và quên luôn số điện thoại hoặc Email để lấy lại thông tin',
-                    image: checkTick,
+                  
                 },
                 {
                     subTitle: 'Bị mất mật khẩu do bị hack',
                      price: 'Liên hệ để báo giá',
                     description: 'Bị mất mật khẩu do bị hacker chiếm đoạt mất tài khoản, thay đổi hết Email và số điện thoại',
-                    image: checkTick,
+                  
                 },
                 {
                     subTitle: 'Mất mật khẩu + bị khóa',
                      price: 'Liên hệ để báo giá',
                     description: 'Thông thường khi mất mật khẩu các bạn thường tìm mọi cách lấy lại mật khẩu, vô tình những cách bạn làm có thể khiến Facebook bạn bị khóa thêm',
-                    image: checkTick,
+                  
                 }
             ]
         },
@@ -233,19 +240,19 @@ const ServiceDetail = () => {
                     subTitle: 'Bị xác thực 2 yếu tố do hacker cài vào hoặc bị mất',
                      price: 'Liên hệ để báo giá',
                     description: 'Mất số điện thoại để nhận mã xác thực, hoặc mất phần mềm. Hay có thể là do hacker cố tình cài vào <br /> Cần giấy tờ tùy thân trùng với thông tin trên Facebook',
-                    image: checkTick,
+                   
                 },
                 {
                     subTitle: 'Bị xác thực 2 yếu tố + bị khóa ở trong',
                      price: 'Liên hệ để báo giá',
                     description: 'Thông thường khi bị hack Facebook hacker sẽ cố tình làm cho Facebook của bạn vừa bị khóa + bị mã xác thực <br /> Cần giấy tờ tùy thân trùng với thông tin trên Facebook',
-                    image: checkTick,
+                   
                 },
                 {
                     subTitle: 'Mở khóa xác thực 2 yếu tố + bảo mật',
                      price: 'Liên hệ để báo giá',
                     description: 'Hỗ trợ mở khóa xác thực 2 yếu tố + bảo mật nick dối với những nick Facebook có tầm ảnh hưởng hoặc làm ăn kinh doanh trên đó <br /> Cần giấy tờ tùy thân trùng với thông tin trên Facebook',
-                    image: checkTick,
+                   
                 }
             ]
         },
@@ -258,19 +265,19 @@ const ServiceDetail = () => {
                     subTitle: 'Bảo mật chống hack Facebook Cá Nhân',
                      price: 'Liên hệ để báo giá',
                     description: 'Hỗ trợ bảo mật chống hack vĩnh viễn, đảm bảo rằng hacker sẽ không làm gì được Facebook cá nhân của bạn',
-                    image: checkTick,
+                    
                 },
                 {
                     subTitle: 'Bảo mật cho người có tầm ảnh hưởng lớn',
                      price: 'Liên hệ để báo giá',
                     description: 'Hỗ trợ bảo mật chống hack, chống khóa, chống report. Đảm bảo rằng bạn có thể dùng Facebook an toàn để làm việc',
-                    image: checkTick,
+                    
                 },
                 {
                     subTitle: 'Bảo mật cho người kinh doanh và bán hàng online',
                      price: 'Liên hệ để báo giá',
                     description: 'Hỗ trợ bảo mật Facebook chống hack, chống khóa, chống bị report để người kinh doanh bán hàng được an toàn',
-                    image: checkTick,
+                    
                 }
             ]
         },
@@ -283,7 +290,7 @@ const ServiceDetail = () => {
                     subTitle: 'Tăng View Live Facebook',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Mắt xem lên ngay lập tức<br />☛ Không giới hạn thời gian live <br />☛ Bảo hành lượt xem',
-                    image: checkTick,
+            
                 },
               
             ]
@@ -297,19 +304,19 @@ const ServiceDetail = () => {
                     subTitle: 'Tăng Like Loại 1',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Người thật đang hoạt động <br />☛ Bảo hành lượt like <br />☛ Lên ngay lập tức',
-                    image: checkTick,
+                    
                 },
                 {
                     subTitle: 'Tăng Like Loại 2',
                      price: 'Liên hệ để báo giá',
                     description: '☛ 70% người thật<br />☛ Bảo hành lượt like <br />☛ Lên ngay lập tức',
-                    image: checkTick,
+                    
                 },
                 {
                     subTitle: 'Tăng Like Loại 3',
                      price: 'Liên hệ để báo giá',
                     description: '☛ 50% người thật<br />☛ Bảo hành lượt like <br />☛ Lên ngay lập tức',
-                    image: checkTick,
+                    
                 }
             ]
         },
@@ -322,13 +329,13 @@ const ServiceDetail = () => {
                     subTitle: 'Like Page, Follows Loại 1',
                      price: 'Liên hệ để báo giá',
                     description: '☛ 40% Người dùng thật <br />☛ Bảo hành lượt like, follows 1 năm<br />☛ Tăng tương tác cho Page',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Like Page, Follows Loại 2',
                      price: 'Liên hệ để báo giá',
                     description: '☛ 60% Người dùng thật<br />☛ Bảo hành lượt like, follows 1 năm <br />☛ Tăng tương tác cho Page',
-                    image: checkTick,
+                 
                 },
            
             ]
@@ -342,31 +349,31 @@ const ServiceDetail = () => {
                     subTitle: 'Tăng View Facebook',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Lên ngay lập tức <br />☛ Lượt view vĩnh viễn<br />☛ View người xem thật',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Tăng View Stories',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Lên ngay lập tức<br />☛ Lượt view vĩnh viễn <br />☛ View người xem thật',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Tăng View 600P',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Lên ngay lập tức<br />☛ Lượt view vĩnh viễn <br />☛ View người xem thật',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Tăng View 60P Live',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Lên ngay lập tức<br />☛ Lượt view vĩnh viễn <br />☛ View người xem thật',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Tăng View 60P Offline',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Lên ngay lập tức<br />☛ Lượt view vĩnh viễn <br />☛ View người xem thật',
-                    image: checkTick,
+                 
                 },
            
             ]
@@ -380,19 +387,19 @@ const ServiceDetail = () => {
                     subTitle: 'Tăng Comments Facebook',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Người thật đang hoạt động<br />☛ Lên ngay lập tức <br />☛ Bảo hành lượt comment',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Tăng Comments Group',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Người thật đang hoạt động<br />☛ Lên ngay lập tức <br />☛ Bảo hành lượt comment',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Tăng Comments Fanpage',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Người thật đang hoạt động<br />☛ Lên ngay lập tức <br />☛ Bảo hành lượt comment',
-                    image: checkTick,
+                 
                 }
             ]
         },
@@ -405,19 +412,19 @@ const ServiceDetail = () => {
                     subTitle: 'Tăng Share Facebook',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Chia sẻ thật<br />☛ Lên ngay lập tức <br />☛ Bảo hành lượt chia sẻ vĩnh viễn',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Tăng Share Live',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Chia sẻ thật<br />☛ Lên ngay lập tức <br />☛ Bảo hành lượt chia sẻ vĩnh viễn',
-                    image: checkTick,
+                 
                 },
                 {
                     subTitle: 'Tăng Share Group',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Chia sẻ thật<br />☛ Lên ngay lập tức <br />☛ Bảo hành lượt chia sẻ vĩnh viễn',
-                    image: checkTick,
+                 
                 }
             ]
         },
@@ -430,7 +437,7 @@ const ServiceDetail = () => {
                     subTitle: 'Tăng Đánh Giá 5* Facebook',
                      price: 'Liên hệ để báo giá',
                     description: '☛ Người đánh giá thật<br />☛ Lên ngay lập tức <br />☛ Bảo hành lượt đánh giá vĩnh viễn',
-                    image: checkTick,
+                   
                 },
             ]
         },
@@ -443,31 +450,31 @@ const ServiceDetail = () => {
                 subTitle: 'Các dịch vụ Fanage khác',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Tăng Like<br />☛ Tăng Comment <br />☛ Buff Đánh Giá <br />☛ Thiết kế logo, ảnh bìa <br />☛ Các gói autoseeding',
-                image: checkTick,
+             
             },
             {
                 subTitle: 'Gói Tăng Like Seeding Fanpage',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Tăng Like<br />☛ Tăng Comment <br />☛ Buff Đánh Giá <br />☛ Thiết kế logo, ảnh bìa <br />☛ Các gói hỗ trợ bán hàng Fanpage',
-                image: checkTick,
+             
             },
             {
                 subTitle: 'Gói Xây Dựng 1',
                  price: 'Liên hệ để báo giá',
                 description: '☛ 5.000 Like Fanpage<br />☛ Hỗ trợ setup Fanpage chuẩn SEO <br />☛ Tặng giáo trình xây dựng Fanpage <br />☛ Thiết kế logo, ảnh bìa <br />☛Tặng gói auto seeding',
-                image: checkTick,
+             
             },
             {
                 subTitle: 'Gói Xây Dựng 2',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Người đánh giá thật<br />☛ Hỗ trợ setup Fanpage chuẩn SEO <br />☛ Hỗ trợ chạy quảng cáo Facebook <br />☛ Thiết kế logo, ảnh bìa <br />☛ Tặng gói auto seeding 100/ 1 tháng',
-                image: checkTick,
+             
             },
             {
                 subTitle: 'Gói Xây Dựng 3',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Người đánh giá thật<br />☛ Hỗ trợ setup Fanpage chuẩn SEO <br />☛ Hỗ trợ chạy quảng cáo Facebook <br />☛ Thiết kế logo, ảnh bìa <br />☛ Tặng gói auto seeding 200/ 1 tháng',
-                image: checkTick,
+             
             },
         ]
     },
@@ -480,19 +487,19 @@ const ServiceDetail = () => {
                 subTitle: 'Bán Group sẵn có',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Cung cấp Group sẵn có số lượng thành viên cực kì lớn, giá phải chăng',
-                image: checkTick,
+               
             },
             {
                 subTitle: 'Cho thuê Group',
                  price: 'Liên hệ để báo giá',
                 description: '☛ bạn có thể tự do đăng bài trên các Group có tương tác cực kì cao của chúng tôi.',
-                image: checkTick,
+               
             },
             {
                 subTitle: 'Tăng Member Group',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Thay vì tìm những Group có ngành đặc thù khó tìm thì bạn có thể nghiên cứu cách để tăng thành viên Group.',
-                image: checkTick,
+               
             },
         ]
     },
@@ -505,19 +512,19 @@ const ServiceDetail = () => {
                 subTitle: 'Fanpage 5.000 Like',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Bảo hành lượt like, bảo hành back<br />☛ Hỗ trợ thiết kế logo, ảnh bìa <br />☛ Tặng gói auto seeding<br />☛ Hỗ trợ chạy quảng cáo',
-                image: checkTick,
+              
             },
             {
                 subTitle: 'Fanpage 10.000 Like',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Bảo hành lượt like, bảo hành back<br />☛ Hỗ trợ thiết kế logo, ảnh bìa <br />☛ Tặng gói auto seeding<br />☛ Hỗ trợ chạy quảng cáo',
-                image: checkTick,
+              
             },
             {
                 subTitle: 'Fanpage 20.000 Like',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Bảo hành lượt like, bảo hành back<br />☛ Hỗ trợ thiết kế logo, ảnh bìa <br />☛ Tặng gói auto seeding<br />☛ Hỗ trợ chạy quảng cáo',
-                image: checkTick,
+              
             },
         ]
     },
@@ -530,7 +537,7 @@ const ServiceDetail = () => {
                 subTitle: 'Ngân Sách 10%',
                  price: 'Liên hệ để báo giá',
                 description: '☛Target đến khách hàng tiềm năng<br />☛ Phí dịch vụ: 10% <br />☛ Cấp quyền xem tài khoản quảng cáo<br />☛ Báo cáo kết quả theo tuần<br />☛  Thêm 3% đối với sản phẩm VPCS',
-                image: checkTick,
+              
             },
         ]
     },
@@ -543,19 +550,19 @@ const ServiceDetail = () => {
                 subTitle: 'Gói Chăm Sóc Fanpage Cơ Bản',
                  price: 'Liên hệ để báo giá',
                 description: '☛Tạo Fanpage <br />☛ hiết kế ảnh bìa/avatar<br />☛ Viết bài Fanpage: <strong>10 bài /Tháng</strong><br />☛ Tăng like bài post: 50 Like /Post.<br />☛  Dựng video dạng slide ảnh: 1 video /Tháng<br />☛ Tối ưu SEO Fanpage.<br />☛ Tặng Landing Page trị giá 2,4 Triệu<br />☛ Setup chặn comment tiêu cực.<br />☛ Setup chóng cướp khách<br />☛ Hợp đồng tối thiểu: 2 tháng.',
-                image: checkTick,
+              
             },
             {
                 subTitle: 'Gói Chăm Sóc Fanpage Pro',
                  price: 'Liên hệ để báo giá',
                 description: '☛Tạo Fanpage <br />☛ hiết kế ảnh bìa/avatar<br />☛ Viết bài Fanpage: 15 bài /Tháng<br />☛ Tăng like bài post: 50 Like /Post.<br />☛  Dựng video dạng slide ảnh: 1 video /Tháng<br />☛ Tối ưu SEO Fanpage.<br />☛ Tặng Landing Page trị giá 3,6 Triệu<br />☛ Setup chặn comment tiêu cực.<br />☛ Setup chóng cướp khách<br />☛ Setup tự động inbox khách hàng khi comment<br />☛ Hợp đồng tối thiểu: 2 tháng.',
-                image: checkTick,
+              
             },
             {
                 subTitle: 'Gói Chăm Sóc Fanpage Doanh Nghiệp',
                  price: 'Liên hệ để báo giá',
                 description: '☛Tạo Fanpage <br />☛ hiết kế ảnh bìa/avatar <br />☛ Viết bài Fanpage: 25 bài /Tháng<br />☛ Tăng like bài post: 50 Like /Post.<br />☛  Dựng video dạng slide ảnh: 1 video /Tháng<br />☛ Tối ưu SEO Fanpage.<br />☛ Tặng Website chuẩn chuyên nghiệp<br />☛ Setup chặn comment tiêu cực.<br />☛ Setup chóng cướp khách<br />☛ Setup tự động inbox khách hàng khi comment<br />☛ Setup kịch bản trả lời tự động<br />☛ Hợp đồng tối thiểu: 2 tháng.',
-                image: checkTick,
+              
             },
         ]
     },
@@ -568,19 +575,19 @@ const ServiceDetail = () => {
                 subTitle: 'Gói Chăm Sóc Fanpage Cơ Bản',
                  price: 'Liên hệ để báo giá',
                 description: '☛Tạo Fanpage <br />☛ hiết kế ảnh bìa/avatar<br />☛ Viết bài Fanpage: <strong>10 bài /Tháng</strong><br />☛ Tăng like bài post: 50 Like /Post.<br />☛  Dựng video dạng slide ảnh: 1 video /Tháng<br />☛ Tối ưu SEO Fanpage.<br />☛ Tặng Landing Page trị giá 2,4 Triệu<br />☛ Setup chặn comment tiêu cực.<br />☛ Setup chóng cướp khách<br />☛ Hợp đồng tối thiểu: 2 tháng.',
-                image: checkTick,
+              
             },
             {
                 subTitle: 'Gói Chăm Sóc Fanpage Pro',
                  price: 'Liên hệ để báo giá',
                 description: '☛Tạo Fanpage <br />☛ hiết kế ảnh bìa/avatar<br />☛ Viết bài Fanpage: 15 bài /Tháng<br />☛ Tăng like bài post: 50 Like /Post.<br />☛  Dựng video dạng slide ảnh: 1 video /Tháng<br />☛ Tối ưu SEO Fanpage.<br />☛ Tặng Landing Page trị giá 3,6 Triệu<br />☛ Setup chặn comment tiêu cực.<br />☛ Setup chóng cướp khách<br />☛ Setup tự động inbox khách hàng khi comment<br />☛ Hợp đồng tối thiểu: 2 tháng.',
-                image: checkTick,
+              
             },
             {
                 subTitle: 'Gói Chăm Sóc Fanpage Doanh Nghiệp',
                  price: 'Liên hệ để báo giá',
                 description: '☛Tạo Fanpage <br />☛ hiết kế ảnh bìa/avatar <br />☛ Viết bài Fanpage: 25 bài /Tháng<br />☛ Tăng like bài post: 50 Like /Post.<br />☛  Dựng video dạng slide ảnh: 1 video /Tháng<br />☛ Tối ưu SEO Fanpage.<br />☛ Tặng Website chuẩn chuyên nghiệp<br />☛ Setup chặn comment tiêu cực.<br />☛ Setup chóng cướp khách<br />☛ Setup tự động inbox khách hàng khi comment<br />☛ Setup kịch bản trả lời tự động<br />☛ Hợp đồng tối thiểu: 2 tháng.',
-                image: checkTick,
+              
             },
         ]
     },
@@ -593,19 +600,19 @@ const ServiceDetail = () => {
                 subTitle: 'Bảo Vệ Bản Quyền Video',
                  price: 'Liên hệ để báo giá',
                 description: 'Dịch vụ này cung cấp dành cho những sáng tạo video, dùng để bảo vệ video chạy quảng cáo hoặc video tạo ra để kinh doanh.',
-                image: checkTick,
+               
             },
             {
                 subTitle: 'Bảo Vệ Bản Quyền Hình ảnh',
                  price: 'Liên hệ để báo giá',
                 description: 'Bảo vệ bản quyền những hình ảnh của bạn đăng tải lên Facebook nhằm đảo bảo rằng không ai coppy và sử dụng hình ảnh đó của bạn.',
-                image: checkTick,
+               
             },
             {
                 subTitle: 'Bảo Vệ Bản Quyền Audio',
                  price: 'Liên hệ để báo giá',
                 description: 'Bảo vệ bản quyền những audio/ âm thanh của bạn đăng tải lên Facebook nhằm đảo bảo rằng không ai coppy và sử dụng thông tin đó của bạn.',
-                image: checkTick,
+               
             },
         ]
     },
@@ -618,7 +625,7 @@ const ServiceDetail = () => {
                 subTitle: 'Dịch vụ lọc bạn bè',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Không bị khóa nick<br />☛ Lọc 1 lần được 1000 – 2000 <br />☛ Lọc nhanh chóng ',
-                image: checkTick,
+               
             },
         ]
     },
@@ -632,19 +639,19 @@ const ServiceDetail = () => {
                 subTitle: 'Xóa Facebook Bị Hacker Chiếm Đoạt',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Facebook bị hack xong rồi bị Hacker mang đi làm việc xấu như vay tiền, hay lừa đảo… <br />☛ Giấy tờ cá nhân trùng với thông tin trên Facebook ',
-                image: checkTick,
+               
             },
             {
                 subTitle: 'Xóa Facebook Bôi Xấu Danh Dự Cá Nhân, Tập Thể',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Bị kẻ xấu bôi nhọ trên nền tảng mạng xã hội Facebook không rõ nguyên nhân. <br />☛ Yêu cầu cung cấp bằng chứng bị bôi nhọ trên Facebook ',
-                image: checkTick,
+               
             },
             {
                 subTitle: 'Xóa Fanpage, Group Bôi Nhọ Danh Dự Cá Nhân, Tập Thể',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Bị kẻ xấu bôi nhọ trên nền tảng mạng xã hội Facebook không rõ nguyên nhân. <br />☛ Yêu cầu cung cấp bằng chứng bị bôi nhọ trên Facebook ',
-                image: checkTick,
+               
             },
         ]
     },
@@ -657,19 +664,19 @@ const ServiceDetail = () => {
                 subTitle: 'Bị vô hiệu hóa chưa up giấy tờ tùy thân',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Bị vô hiệu hóa do vi phạm nhưng bạn chưa up giấy tờ tùy thân của mình lên',
-                image: checkTick,
+               
             },
             {
                 subTitle: 'Bị vô hiệu hóa vĩnh viễn và không thể mở lại',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Up giấy tờ tùy thân lên những đã nhận được thông báo vô hiệu hóa vĩnh viễn và không còn quyền truy cập Facebook',
-                image: checkTick,
+               
             },
             {
                 subTitle: 'Bị vô hiệu hóa những up giấy tờ tùy thân bị từ chối',
                  price: 'Liên hệ để báo giá',
                 description: '☛ Up giấy tờ tùy thân nên bị từ chối và bắt up lại giấy tờ khác và không thể xác minh.',
-                image: checkTick,
+               
             },
         ]
     },
@@ -1042,28 +1049,40 @@ const ServiceDetail = () => {
     // Chỉ xử lý định dạng mô tả nếu service tồn tại
     const formattedDescription = service ? service.description.replace(/\n/g, '<br />') : '';
    
-    
+    // Đảm bảo rằng `service` tồn tại trước khi truy cập thuộc tính
+if (!service) {
+    return <div>Service not found</div>;
+}
     // Item hỗ trợ
     
-
+    const scrollToSection = () => {
+        scroller.scrollTo('serviceDetails', {
+            duration: 800,
+            delay: 0,
+            smooth: 'easeInOutQuart'
+        });
+    };
     return (
         <div className="">
 
-        <div className={`service-detail flex justify-center items-center p-[40px] ${gradientClass} h-[100vh]`}>
+<div className={`service-detail flex justify-center items-center p-[40px] ${gradientClass} h-[100vh]`}>
             {service ? (
                 <div className="service-detail-content flex flex-row items-center max-w-[1200px] p-[40px] rounded-[10px] shadow-xl">
                     <div className="service-text flex-1 mr-[40px]">
                         <h1 className={`${textClass} ${textDesc} service-title text-[2.5rem] text-[#333] mb-[20px] font-bold`}>{service.title}</h1>
                         <p 
-                            className={`service-description ${textClass}   text-[1.2rem] text-[#666] leading-[1.6] mb-[16px] w-[400px] text-justify mr-[100px]`} 
+                            className={`service-description ${textClass} text-[1.2rem] text-[#666] leading-[1.6] mb-[16px] w-[400px] text-justify mr-[100px]`} 
                             dangerouslySetInnerHTML={{ __html: formattedDescription }}
                         />
-                        <button className={`service-button text-[#fff] py-2.5 px-5 border-none rounded-[23px] text-[1.1rem] font-bold ${buttonClass}`}>
-                            Đăng Ký Sử Dụng
+                        <button 
+                            className={`service-button text-[#fff] py-2.5 px-5 border-none rounded-[23px] text-[1.1rem] font-bold ${buttonClass}`}
+                            onClick={scrollToSection} // Scrolls to the section when clicked
+                        >
+                            Chi Tiết Dịch Vụ
                         </button>
                     </div>
-                    <div className="service-image w-[300px] h-[auto] ">
-                        <img src={service.image} alt={service.title} className=' object-cover rounded-xl' />
+                    <div className="service-image w-[300px] h-[auto]">
+                        <img src={service.image} alt={service.title} className='object-cover rounded-xl' />
                     </div>
                 </div>
             ) : (
@@ -1220,21 +1239,21 @@ const ServiceDetail = () => {
       <div>
         <img
           className="w-full h-[582px] object-cover rounded-xl"
-          src="https://images.unsplash.com/photo-1549813069-f95e44d7f498?q=80&w=1956&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Slider 1"
         />
       </div>
       <div>
         <img
           className="w-full h-[582px] object-cover rounded-xl"
-          src="https://plus.unsplash.com/premium_photo-1683842189153-b6cd120a2b44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Slider 2"
         />
       </div>
       <div>
         <img
           className="w-full h-[582px] object-cover rounded-xl"
-          src="https://images.unsplash.com/photo-1598358532244-6480b5c5ea1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://plus.unsplash.com/premium_photo-1684341008385-31d2eb4f3afe?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Slider 3"
         />
       </div>
@@ -1244,100 +1263,96 @@ const ServiceDetail = () => {
 
       </div>
     </div>
-    {service && service.subServices && (
-    <div className="max-w-7xl mx-auto px-4 py-12 text-center  p-10">
-        <h2 className="text-2xl font-bold mb-6 text-center">Chi Tiết Dịch Vụ</h2>
-        <span className="font-bold text-3xl block mb-10">
-            Dịch vụ 
-            <span className="gradient-text font-bold"> {service.title}.</span>
-        </span>
-        <div 
-            className={`grid gap-10 items-center justify-center ${
-                service.subServices.length === 1 ? 'grid-cols-1 max-w-xs mx-auto' : 
-                service.subServices.length === 2 ? 'grid-cols-2 max-w-3xl mx-auto' : 
-                'grid-cols-1 md:grid-cols-3'
-            }`}
-        >
-            {service.subServices.map((subService, index) => (
-                <div key={index} className="bg-gray-100  rounded-lg h-full w-[400px] shadow-md text-center mt-10 max-w-xs mx-auto transform transition-transform hover:scale-105">
-                    <div className="bg-[#58efd8] text-white text-lg p-4 font-bold py-2 rounded-t-lg">
-                        <span className='text-black'>{service.title}</span>
+       {/* Service Details Section */}
+       <Element name="serviceDetails">
+                {service && service.subServices && (
+                    <div className="max-w-7xl mx-auto px-4 py-12 text-center p-10">
+                        <h2 className="text-2xl font-bold mb-6 text-center">Chi Tiết Dịch Vụ</h2>
+                        <span className="font-bold text-3xl block mb-10">
+                            Dịch vụ 
+                            <span className="gradient-text font-bold"> {service.title}.</span>
+                        </span>
+                        <div 
+                            className={`grid gap-10 items-center justify-center ${
+                                service.subServices.length === 1 ? 'grid-cols-1 max-w-xs mx-auto' : 
+                                service.subServices.length === 2 ? 'grid-cols-2 max-w-3xl mx-auto' : 
+                                'grid-cols-1 md:grid-cols-3'
+                            }`}
+                        >
+                            {service.subServices.map((subService, index) => (
+                                <div key={index} className="bg-gray-100 rounded-lg h-full w-[400px] shadow-md text-center mt-10 max-w-xs mx-auto transform transition-transform hover:scale-105">
+                                    <div className="bg-[#58efd8] text-white text-lg p-4 font-bold py-2 rounded-t-lg">
+                                        <span className="text-black">{service.title}</span>
+                                    </div>
+                                    {subService.image && (
+                                        <img src={subService.image} alt={subService.subTitle} className="w-40 h-40 mx-auto my-4 object-cover rounded-md" />
+                                    )}
+                                    <h3 className="text-lg font-semibold mb-4 px-6 mt-[30px]">{subService.subTitle}</h3>
+                                    <h4 className="text-xl font-bold text-blue-600 mb-4 px-6">{subService.price}</h4>
+                                    <p className="text-sm text-gray-700 mb-4 px-6 text-justify" dangerouslySetInnerHTML={{ __html: subService.description }} />
+                                    <button className="font-bold bg-blue-500 text-white py-2 px-4 rounded-full mt-[30px]" onClick={() => window.open('https://zalo.me/0392778939', '_blank')}>Liên Hệ Ngay</button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <img src={subService.image} alt={subService.subTitle} className="w-20 h-20 mx-auto my-4" />
-                    <h3 className="text-lg font-semibold mb-4 px-6">{subService.subTitle}</h3>
-                    <h4 className="text-xl font-bold text-blue-600 mb-4 px-6">{subService.price}</h4>
-                    <p className="text-sm text-gray-700 mb-4 px-6" dangerouslySetInnerHTML={{ __html: subService.description }} />
-                    <button className="font-bold bg-blue-500 text-white py-2 px-4 rounded-full mt-[30px]"   onClick={() => window.open('https://zalo.me/0392778939', '_blank')}>Liên Hệ Ngay</button>
-                </div>
-            ))}
-        </div>
-    </div>
-)}
+                )}
 
-            {service.otherSubService && service.otherSubService.length > 0 && (
-    <div className="other-sub-services mb-12 text-center  p-10">
-        <h2 className="text-2xl font-bold mb-6 text-center">Chi Tiết Dịch Vụ</h2>
-        <span className='text-3xl mb-[30px]'>
-            Dịch vụ
-            <span className="gradient-text font-bold"> {service.title}.</span>
-        </span>
-        <div 
-            className={`grid gap-10 max-w-[1000px]  mx-auto mt-12 items-center ${
-                service.otherSubService.length === 1 ? 'justify-center' : ''} ${
-                service.otherSubService.length === 2 ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-3'
-            }`}
-        > 
-            {service.otherSubService.map((otherSub, index) => (
-                <div key={index} className="bg-white border border-gray-200 h-[400px]  rounded-lg shadow-lg text-center transform transition-transform hover:scale-105">
-                <div className="bg-blue-600 text-white text-sm font-bold p-2 rounded-t-lg uppercase">
-                        {otherSub.subServer}
+                {service.otherSubService && service.otherSubService.length > 0 ? (
+                    <div className="other-sub-services mb-12 text-center p-10">
+                        <h2 className="text-2xl font-bold mb-6 text-center">Chi Tiết Dịch Vụ</h2>
+                        <span className="text-3xl mb-[30px]">
+                            Dịch vụ
+                            <span className="gradient-text font-bold"> {service.title}.</span>
+                        </span>
+                        <div 
+                            className={`grid gap-10 max-w-[1000px] mx-auto mt-12 items-center ${
+                                service.otherSubService.length === 1 ? 'justify-center' : ''} ${
+                                service.otherSubService.length === 2 ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-3'
+                            }`}
+                        > 
+                            {service.otherSubService.map((otherSub, index) => (
+                                <div key={index} className="bg-white border border-gray-200 h-[400px] rounded-lg shadow-lg text-center transform transition-transform hover:scale-105">
+                                    <div className="bg-blue-600 text-white text-sm font-bold p-2 rounded-t-lg uppercase">
+                                        {otherSub.subServer}
+                                    </div>
+                                    <h3 className="text-xl font-semibold mb-4 mt-[20px]">{otherSub.subName}</h3>
+                                    <p className="text-gray-700 text-xs mb-4 px-5">{otherSub.subPrice}</p>
+                                    <p className="text-gray-600 mb-6 leading-10 text-justify  ml-[50px]" dangerouslySetInnerHTML={{ __html: otherSub.subOtherDescription }}></p>
+                                    <button className="bg-[#eeae47] shadow-lg text-white py-2 px-6 mb-[20px] rounded-full font-bold" onClick={() => window.open('https://zalo.me/0392778939', '_blank')}>Mua Ngay</button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-4 mt-[20px]">{otherSub.subName}</h3>
-                    <p className="text-gray-700 text-xs mb-4 px-5">{otherSub.subPrice}</p>
-                    <p className="text-gray-600 mb-6 leading-10  text-center " dangerouslySetInnerHTML={{ __html: otherSub.subOtherDescription }}></p>
-                    <button className="bg-[#eeae47] shadow-lg text-white py-2 px-6 mb-[20px] rounded-full font-bold"   onClick={() => window.open('https://zalo.me/0392778939', '_blank')}>Mua Ngay</button>
-                </div>
-            ))}
-        </div>
-    </div>
-)}
+                ) : (
+                    <div></div>
+                )}
 
-
-
-                    
-{service.otherSubYTService && service.otherSubYTService.length > 0 && (
-    <div className="other-sub-yt-services mb-12 text-center  p-10">
-        <h2 className="text-2xl font-bold mb-6 text-center ">Chi Tiết Dịch Vụ</h2>
-        <span className='text-3xl mb-[30px]'>
-            Dịch vụ
-            <span className="gradient-text font-bold "> {service.title}.</span>
-        </span>
-        <div 
-            className={`flex flex-wrap gap-10 max-w-[1000px]  mt-12 m-auto items-center justify-center ${
-                service.otherSubYTService.length === 1 ? 'justify-center' : ''} ${
-                service.otherSubYTService.length === 2 ? 'justify-around' : 'justify-between'
-            }`}
-        >
-            {service.otherSubYTService.map((subYTService, index) => (
-                <div key={index} className="bg-gray-200 p-4 rounded-lg shadow-md mx-auto text-center flex-1 max-w-[300px] transform transition-transform hover:scale-105">
-                    <h3 className="text-lg font-semibold mb-2">{subYTService.subYTName}</h3>
-                    <span className='text-[#ff110d] font-bold'>Liên hệ để báo giá</span>
-                    <p className="text-gray-600 mb-2">{subYTService.subYTPrice}</p>
-                    <p className="text-gray-600 leading-10" dangerouslySetInnerHTML={{ __html: subYTService.subYTOtherDescription }}></p>
-                    <button  className="bg-[#ff110d] text-white py-2 px-4 rounded-full font-bold mt-[40px]"   onClick={() => window.open('https://zalo.me/0392778939', '_blank')}>Mua Ngay</button>
-                </div>
-            ))}
-        </div>
-    </div>
-)}
-
-
-
-                   
-    
-            
-        
-         
+                {service.otherSubYTService && service.otherSubYTService.length > 0 && (
+                    <div className="other-sub-yt-services mb-12 text-center p-10">
+                        <h2 className="text-2xl font-bold mb-6 text-center">Chi Tiết Dịch Vụ</h2>
+                        <span className="text-3xl mb-[30px]">
+                            Dịch vụ
+                            <span className="gradient-text font-bold"> {service.title}.</span>
+                        </span>
+                        <div 
+                            className={`flex flex-wrap gap-10 max-w-[1000px] mt-12 m-auto items-center justify-center ${
+                                service.otherSubYTService.length === 1 ? 'justify-center' : ''} ${
+                                service.otherSubYTService.length === 2 ? 'justify-around' : 'justify-between'
+                            }`}
+                        >
+                            {service.otherSubYTService.map((subYTService, index) => (
+                                <div key={index} className="bg-gray-200 p-4 rounded-lg shadow-md mx-auto text-center flex-1 max-w-[300px] transform transition-transform hover:scale-105">
+                                    <h3 className="text-lg font-semibold mb-2">{subYTService.subYTName}</h3>
+                                    <span className="text-[#ff110d] font-bold">Liên hệ để báo giá</span>
+                                    <p className="text-gray-600 mb-2">{subYTService.subYTPrice}</p>
+                                    <p className="text-gray-600 leading-10 text-justify ml-[75px]" dangerouslySetInnerHTML={{ __html: subYTService.subYTOtherDescription }}></p>
+                                    <button className="bg-[#ff110d] text-white py-2 px-4 rounded-full font-bold mt-[40px]" onClick={() => window.open('https://zalo.me/0392778939', '_blank')}>Mua Ngay</button>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </Element>
         </div>
            
         

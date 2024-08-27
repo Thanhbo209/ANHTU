@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import AOS from "aos";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import "aos/dist/aos.css";
 import fbLogo from '../picture/Facebook_Logo_2023 (1).png';
 import zaloLogo from '../picture/Icon_of_Zalo.svg.webp';
 import phoneCall from '../picture/2934394.png';
+import FBProfileImg from '../picture/photo-1660924198520-85447f410eff.avif';
+import { useInView } from 'react-intersection-observer';
 
 const MainPage = () => {
+  
     useEffect(() => {
         AOS.init({ duration: 1000, easing: "ease-out", once: true });
       }, []);
 
- 
+      const services = [
+        { name: "Lên tích xanh Facebook", link: "/service-detail/facebook-verify" },
+        { name: "Lấy lại Facebook", link: "/service-detail/recover-facebook" },
+        { name: "Tăng Follower, Like FanPage", link: "/service-detail/increase-follower" },
+        { name: "Tăng Comment", link: "/service-detail/increase-comment" },
+        // Add more services as needed...
+    ];
+
 
       const handleScrollToTopAndReload = () => {
           setTimeout(() => {
@@ -34,7 +44,7 @@ const MainPage = () => {
             "Nền tảng hình ảnh và video giúp bạn thể hiện bản thân và kết nối qua nội dung trực quan. Lý tưởng cho quảng bá thương hiệu",
           liveLink: "#",
           codeLink: "#",
-          imgSrc: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your image URL
+          imgSrc: "https://images.unsplash.com/photo-1596526131090-bcbe09e432d3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your image URL
         },
         {
           title: "TikTok",
@@ -42,7 +52,7 @@ const MainPage = () => {
             "Nền tảng video ngắn cho phép bạn sáng tạo nội dung giải trí và lan truyền. Mục tiêu là tạo ra sự tương tác mạnh mẽ và thu hút người xem",
           liveLink: "#",
           codeLink: "#",
-          imgSrc: "https://images.unsplash.com/photo-1594321120022-7649850959bb?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your image URL
+          imgSrc: "https://images.unsplash.com/photo-1642141325625-f76034e4ad2b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your image URL
         },
         {
           title: "Youtube",
@@ -50,7 +60,7 @@ const MainPage = () => {
             "Nền tảng video toàn cầu cho phép bạn khám phá, học hỏi và quảng bá qua video. Đặc biệt hiệu quả cho doanh nghiệp trong việc tiếp cận người dùng..",
           liveLink: "#",
           codeLink: "#",
-          imgSrc: "https://plus.unsplash.com/premium_photo-1683287925874-f8b46c6437ae?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your image URL
+          imgSrc: "https://images.unsplash.com/photo-1541877944-ac82a091518a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your image URL
         },
       ];
 
@@ -73,91 +83,189 @@ const MainPage = () => {
             }, 300);
         }
     };
+    const [ref, inView] = useInView({
+      triggerOnce: true,
+      threshold: 0.5,  // Trigger khi 50% của phần tử visible
+    });
+    const stats = [
+      { label: "Người Sử Dụng Hài Lòng", value: 1000 },
+      { label: "Khách Hàng Tiềm Năng", value: 30 },
+      { label: "Năm Trong Nghề", value: 5 },
+      { label: "Và Vô Số Phản Hồi Tích Cực", value: 10000 },
+    ];
+    const AnimatedCounter = ({ value }) => {
+      const [count, setCount] = useState(0);
+    
+      React.useEffect(() => {
+        let start = 0;
+        const end = value;
+        if (start === end) return;
+        
+        let totalDuration = 2000; // tổng thời gian chạy (ms)
+        let incrementTime = (totalDuration / end);
+    
+        let timer = setInterval(() => {
+          start += 1;
+          setCount(start);
+          if (start === end) clearInterval(timer);
+        }, incrementTime);
+        
+        return () => clearInterval(timer);
+      }, [value]);
+    
+     
+     // Định dạng số
+  const formatNumber = (num) => {
+    if (num >= 1000000) {
+      return `${(num / 1000000).toFixed(1)}M`; // Định dạng thành 1M
+    }
+    return num;
+  };
+
+  return <>{formatNumber(count)}</>;
+};
+
+const navigate = useNavigate(); // Hook điều hướng
+const [searchTerm, setSearchTerm] = useState('');
+
+const handleSearch = () => {
+  if (searchTerm.trim()) {
+      navigate(`/search-results?query=${encodeURIComponent(searchTerm)}`);
+  }
+};
+const handleKeyPress = (event) => {
+  if (event.key === 'Enter') {
+      handleSearch();
+  }
+};
+const [filteredResults, setFilteredResults] = useState([]);
+const handleInputChange = (e) => {
+  const query = e.target.value.toLowerCase();
+  setSearchTerm(query);
+
+  if (query.length > 0) {
+      const results = services.filter(service =>
+          service.name.toLowerCase().includes(query)
+      );
+      setFilteredResults(results);
+  } else {
+      setFilteredResults([]);
+  }
+};
+
     return (
         <div>
         
-           <section
-      className="h-screen flex items-center justify-center bg-white"
-      data-aos="fade-right" // Sử dụng AOS để thêm hiệu ứng scroll
-    >
-      <div className="text-center">
+        <section className="h-screen flex items-center justify-center bg-white" data-aos="fade-right">
+    <div className="text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
-        Chào mừng bạn đến với dịch vụ <span className="text-teal-500"><br />MXH</span> của chúng tôi
+            Chào mừng bạn đến với dịch vụ <span className="text-teal-500"><br />MXH</span> của chúng tôi
         </h1>
-        <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 mt-4">
-          Tôi là <span className="text-teal-500">Lục Văn Tứ</span>.
-        </p>
-        <Link to ='/chi-tiet'>
+        <div className="mt-8 w-3/4 md:w-1/2 mx-auto flex items-center space-x-4">
+            <div className="relative w-full">
+                <input 
+                    type="text" 
+                    placeholder="Tìm kiếm dịch vụ..."
+                    className="w-full px-4 py-2 border-2 border-teal-500 text-lg rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent pl-10" 
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                    onKeyDown={handleKeyPress}
+                />
+                <i className="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-500 "></i>
 
-        <button className="mt-8 px-6 py-2 border-2 border-teal-500 text-teal-500 text-lg font-semibold rounded overflow-hidden relative group">
-          <span className="absolute inset-0 bg-teal-500 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
-          <span className="relative z-10 text-black group-hover:text-white">
-            Chi Tiết
-          </span>
-        </button>
-        </Link>
-      </div>
-    </section>
+                {searchTerm && filteredResults.length > 0 && (
+                    <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+                        {filteredResults.map((result, index) => (
+                            <Link 
+                                key={index} 
+                                to={result.link}
+                                className="block px-4 py-2 hover:bg-gray-100"
+                            >
+                                {result.name}
+                            </Link>
+                        ))}
+                    </div>
+                )}
+            </div>
+            <button 
+                onClick={handleSearch}
+                className="px-4 py-2 border-2 border-teal-500 text-teal-500 text-lg rounded-[50%] font-semibold  overflow-hidden relative group"
+            >
+                <span className="absolute inset-0 bg-teal-500 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out "></span>
+                <span className="relative z-10 text-black group-hover:text-white text-xs ">
+                <i className="fa-solid fa-magnifying-glass "></i>
+                </span>
+            </button>
+        </div>
+    </div>
+</section>
+
 
     <section className="h-screen flex items-center justify-center bg-teal-500">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start">
-        <div
-          className="w-full md:w-1/2 mb-6 md:mb-0"
-          data-aos="fade-down"
-          data-aos-delay="200" // Độ trễ cho hình ảnh
-        >
-          <img
-            src="https://via.placeholder.com/400"
-            alt="About Me"
-            className="rounded-lg shadow-lg"
-          />
-        </div>
-        <div className="w-full md:w-1/2 md:ml-8 text-white">
-          <h2
-            className="text-4xl font-bold mb-4"
-            data-aos="fade-down"
-            data-aos-delay="400" // Độ trễ cho tiêu đề
-          >
-             PROFILE
-          </h2>
-          <p
-            className="text-lg mb-4"
-            data-aos="fade-left"
-            data-aos-delay="600" // Độ trễ cho đoạn văn đầu tiên
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
-            neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
-            voluptatum.
-          </p>
-          <p
-            className="text-lg mb-4"
-            data-aos="fade-right"
-            data-aos-delay="800" // Độ trễ cho đoạn văn thứ hai
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
-            neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
-            voluptatum.
-          </p>
-          <p
-            className="text-lg mb-4"
-            data-aos="fade-left"
-            data-aos-delay="1000" // Độ trễ cho đoạn văn cuối cùng
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          </p>
-          <button
-            className="relative px-6 py-2 border-2 border-white text-white font-semibold rounded overflow-hidden group"
-            data-aos="fade-right"
-            data-aos-delay="1200" // Độ trễ cho nút
-          >
-            <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
-            <span className="relative z-10 text-white group-hover:text-teal-500 transition-colors duration-300 ease-out">
-              Xem Thêm
-            </span>
-          </button>
-        </div>
+  <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0">
+    <div
+      className="w-full md:w-1/2 mb-6 md:mb-0"
+      data-aos="fade-down"
+      data-aos-delay="200"
+    >
+      <img
+        src={FBProfileImg}
+        alt="About Me"
+        className="rounded-lg shadow-lg object-cover w-full h-[650px] p-10 "
+      />
+    </div>
+    <div className="w-full md:w-1/2 md:ml-16 text-white"> {/* Điều chỉnh khoảng cách */}
+      <h2
+        className="text-4xl font-bold mb-4"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      >
+        GIỚI THIỆU
+      </h2>
+      <p
+        className="text-3xl font-bold mb-4"
+        data-aos="fade-left"
+        data-aos-delay="600"
+      >
+       
+      </p>
+      <div
+        className="text-lg mb-4"
+        data-aos="fade-right"
+        data-aos-delay="800"
+      >
+        {/* Bạn cũng có thể thêm số liệu như phần thống kê */}
+      <p
+        className="text-base mb-4"
+        data-aos="fade-left"
+        data-aos-delay="1000"
+      >
+        Bạn cần tăng lượng follower? quản lý fanpage? hay chạy quảng cáo hiệu quả? đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn đạt được mục tiêu kinh doanh.
+      </p>
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <h2 className="text-4xl font-bold text-gray-900">
+                {inView ? <AnimatedCounter value={stat.value} /> : 0}+
+              </h2>
+              <p className="mt-2 text-lg text-gray-600">{stat.label}</p>
+            </div>
+          ))}
+        </div> 
       </div>
-    </section>
+      <button
+        className="relative px-6 py-2 border-2 border-white text-white font-semibold rounded overflow-hidden group"
+        data-aos="fade-right"
+        data-aos-delay="1200"
+      >
+        <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+        <span className="relative z-10 text-white group-hover:text-teal-500 transition-colors duration-300 ease-out">
+          Xem Thêm
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
 
     <section className="py-16">
       <div className="container mx-auto px-6">

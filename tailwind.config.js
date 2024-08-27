@@ -17,6 +17,15 @@ module.exports = {
       textFillColor: {
         transparent: 'transparent',
       },
+      keyframes: {
+        bounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-15px)' },
+        },
+      },
+      animation: {
+        bounce: 'bounce 1s infinite',
+      },
  
     },
   },

@@ -8,6 +8,7 @@ import MainPage from './component/MainPage';
 import WebsiteDesigner from './component/WebsiteDesigner';
 import Contact from './component/Contact.jsx';
 import ServicesSection from './component/ServicesSection.jsx';
+import SearchResult from './component/SearchResult.jsx';
 
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
 <Route path="/thiet-ke-trang-web" element={<WebsiteDesigner />}/>
 <Route path="/lien-he" element={<Contact />}/>
 <Route path="/:serviceName" element={<ServiceDetail />} />
+<Route path="/search-results" element={<SearchResult />} />
+<Route path="/service-detail/:serviceName" element={<ServiceDetail />} />
+
 </Routes>
 
     </div>

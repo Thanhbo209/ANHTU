@@ -1,16 +1,37 @@
 import React from 'react';
-
+import { FaStar } from 'react-icons/fa'; // Import biểu tượng sao từ thư viện react-icons
+const BouncingText = () => {
+  const text = "Marketing Mạng Xã Hội";
+  
+ return (
+    <div className="flex justify-center mt-20">
+      {text.split("").map((char, index) => (
+        <span
+          key={index}
+          className={`inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 ${
+            char !== " " ? 'animate-bounce' : ''
+          }`}
+          style={{
+            animationDelay: `${index * 0.1}s`,
+            animationIterationCount: 'infinite',
+            display: "inline-block",
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </div>
+  );
+};
 const ServicesSection = () => {
   return (
-    <div className="bg-gray-100 py-12">
+    <div className="bg-gray-100 py-12 h-[100vh]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Our Services</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold text-gray-900 sm:text-4xl">
-            Social Media Marketing
-          </p>
+          <BouncingText />
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            We offer specialized services to grow your online presence across major platforms.
+            Chúng tôi cung cấp các dịch vụ chuyên biệt để phát triển sự hiện diện trực tuyến của bạn trên các nền tảng chính.
           </p>
         </div>
 
@@ -18,7 +39,7 @@ const ServicesSection = () => {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {/* Facebook Service */}
             <div className="pt-6">
-              <div className="flow-root bg-white rounded-lg px-4 pb-8 shadow-lg">
+              <div className="flow-root bg-white rounded-lg px-4 pb-8 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
                 <div className="-mt-6">
                   <div>
                     <span className="inline-flex items-center justify-center p-3 bg-blue-500 rounded-md shadow-lg">
@@ -29,7 +50,7 @@ const ServicesSection = () => {
                   </div>
                   <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Facebook Marketing</h3>
                   <p className="mt-5 text-base text-gray-500">
-                    Boost your brand's presence on Facebook with our targeted ad campaigns and community management strategies.
+                    Tăng cường sự hiện diện của thương hiệu bạn trên Facebook với các chiến dịch quảng cáo nhắm mục tiêu và chiến lược quản lý cộng đồng của chúng tôi.
                   </p>
                 </div>
               </div>
@@ -37,18 +58,18 @@ const ServicesSection = () => {
 
             {/* Instagram Service */}
             <div className="pt-6">
-              <div className="flow-root bg-white rounded-lg px-4 pb-8 shadow-lg">
+              <div className="flow-root bg-white rounded-lg px-4 pb-8 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
                 <div className="-mt-6">
                   <div>
                     <span className="inline-flex items-center justify-center p-3 bg-pink-500 rounded-md shadow-lg">
                       <svg className="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.206.058 2.007.24 2.48.511.556.312.95.682 1.38 1.112.429.429.8.824 1.111 1.379.272.474.453 1.275.511 2.481.058 1.265.071 1.645.071 4.849s-.012 3.584-.07 4.849c-.058 1.206-.24 2.007-.511 2.48-.312.556-.682.95-1.112 1.38-.429.429-.824.8-1.379 1.111-.474.272-1.275.453-2.481.511-1.265.058-1.645.071-4.849.071s-3.584-.012-4.849-.07c-1.206-.058-2.007-.24-2.48-.511-.556-.312-.95-.682-1.38-1.112-.429-.429-.8-.824-1.111-1.379-.272-.474-.453-1.275-.511-2.481-.058-1.265-.071-1.645-.071-4.849s.012-3.584.07-4.849c.058-1.206.24-2.007.511-2.48.312-.556.682-.95 1.112-1.38.429-.429.824-.8 1.379-1.111.474-.272 1.275-.453 2.481-.511 1.265-.058 1.645-.071 4.849-.071m0-2.163c-3.259 0-3.667.012-4.947.071-1.282.059-2.159.27-2.919.57-.787.31-1.447.725-2.106 1.384-.659.659-1.074 1.319-1.384 2.106-.3.76-.511 1.637-.57 2.919-.059 1.28-.071 1.688-.071 4.947s.012 3.667.071 4.947c.059 1.282.27 2.159.57 2.919.31.787.725 1.447 1.384 2.106.659.659 1.319 1.074 2.106 1.384.76.3 1.637.511 2.919.57 1.28.059 1.688.071 4.947.071s3.667-.012 4.947-.071c1.282-.059 2.159-.27 2.919-.57.787-.31 1.447-.725 2.106-1.384.659-.659 1.319-1.074 2.106-1.384.76-.3 1.637-.511 2.919-.57 1.28-.059 1.688-.071 4.947-.071s3.667-.012 4.947-.071c1.282-.059 2.159-.27 2.919-.57.787-.31 1.447-.725 2.106-1.384.659-.659 1.074-1.319 1.384-2.106.3-.76.511-1.637.57-2.919.059-1.28.071-1.688.071-4.947s-.012-3.667-.071-4.947c-.059-1.282-.27-2.159-.57-2.919-.31-.787-.725-1.447-1.384-2.106-.659-.659-1.319-1.074-2.106-1.384-.76-.3-1.637-.511-2.919-.57-1.28-.059-1.688-.071-4.947-.071zM12 5.838a6.163 6.163 0 100 12.327 6.163 6.163 0 000-12.327zm0 10.163a3.838 3.838 0 110-7.676 3.838 3.838 0 010 7.676zm7.448-10.47a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z" />
+                        <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.206.058 2.007.24 2.48.511.556.312.95.682 1.38 1.112.429.429.8.824 1.111 1.379.272.474.453 1.275.511 2.481.058 1.265.071 1.645.071 4.849s-.012 3.584-.07 4.849c-.058 1.206-.24 2.007-.511 2.48-.312.556-.682.95-1.112 1.38-.429.429-.824.8-1.379 1.111-.474.272-1.275.453-2.481.511-1.265.058-1.645.071-4.849.071s-3.584-.012-4.849-.07c-1.206-.058-2.007-.24-2.48-.511-.556-.312-.95-.682-1.38-1.112-.429-.429-.8-.824-1.111-1.379-.272-.474-.453-1.275-.511-2.481-.058-1.265-.071-1.645-.071-4.849s.012-3.584.07-4.849c.058-1.206.24-2.007.511-2.48.312-.556.682-.95 1.112-1.38.429-.429.824-.8 1.379-1.111.474-.272 1.275-.453 2.481-.511 1.265-.058 1.645-.071 4.849-.071m0-2.163c-3.259 0-3.667.012-4.947.071-1.282.059-2.159.27-2.919.57-.787.31-1.447.725-2.106 1.384-.659.659-1.074 1.319-1.384 2.106-.3.76-.511 1.637-.57 2.919-.059 1.28-.071 1.688-.071 4.947s.012 3.667.071 4.947c.059 1.282.27 2.159.57 2.919.31.787.725 1.447 1.384 2.106.659.659 1.319 1.074 2.106 1.384.76.3 1.637.511 2.919.57 1.28.059 1.688.071 4.947.071s3.667-.012 4.947-.071c1.282-.059 2.159-.27 2.919-.57.787-.31 1.447-.725 2.106-1.384.659-.659 1.319-1.074 2.106-1.384.76-.3 1.637-.511 2.919-.57 1.28-.059 1.688-.071 4.947-.071s3.667-.012 4.947-.071c1.282-.059 2.159-.27 2.919-.57.787-.31 1.447-.725 2.106-1.384.659-.659 1.074-1.319 1.384-2.106.3-.76.511-1.637.57-2.919.059-1.28.071-1.688.071-4.947s-.012-3.667-.071-4.947c-.059-1.282-.27-2.159-.57-2.919-.31-.787-.725-1.447-1.384-2.106-.659-.659-1.319-1.074-2.106-1.384-.76-.3-1.637-.511-2.919-.57-1.28-.059-1.688-.071-4.947-.071s-3.667.012-4.947.071c-1.282.059-2.159.27-2.919.57-.787.31-1.447.725-2.106 1.384-.659.659-1.074 1.319-1.384 2.106-.3.76-.511 1.637-.57 2.919-.059 1.28-.071 1.688-.071 4.947zM12 5.838a6.163 6.163 0 100 12.327 6.163 6.163 0 000-12.327zm0 10.163a3.838 3.838 0 110-7.676 3.838 3.838 0 010 7.676zm7.448-10.47a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z" />
                       </svg>
                     </span>
                   </div>
-                  <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Instagram Marketing</h3>
+                  <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight ">Instagram Marketing</h3>
                   <p className="mt-5 text-base text-gray-500">
-                    Elevate your brand's visibility on Instagram through visually engaging content and powerful influencer partnerships.
+                    Nâng cao khả năng hiển thị của thương hiệu bạn trên Instagram thông qua nội dung hấp dẫn về mặt hình ảnh và các hợp tác với những người ảnh hưởng mạnh mẽ.
                   </p>
                 </div>
               </div>
@@ -56,7 +77,7 @@ const ServicesSection = () => {
 
             {/* YouTube Service */}
             <div className="pt-6">
-              <div className="flow-root bg-white rounded-lg px-4 pb-8 shadow-lg">
+              <div className="flow-root bg-white rounded-lg px-4 pb-8 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
                 <div className="-mt-6">
                   <div>
                     <span className="inline-flex items-center justify-center p-3 bg-red-500 rounded-md shadow-lg">
@@ -67,7 +88,7 @@ const ServicesSection = () => {
                   </div>
                   <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">YouTube Marketing</h3>
                   <p className="mt-5 text-base text-gray-500">
-                    Maximize your video reach on YouTube with our expert strategies, including content optimization and targeted ads.
+                    Tối ưu hóa tầm với video của bạn trên YouTube với các chiến lược chuyên môn của chúng tôi, bao gồm tối ưu hóa nội dung và quảng cáo nhắm mục tiêu.
                   </p>
                 </div>
               </div>
@@ -79,37 +100,38 @@ const ServicesSection = () => {
   );
 };
 
+
 const ProcessSection = () => {
   return (
-    <div className="bg-white py-12">
+    <div className="bg-blue-500 py-12 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Our Process</h2>
+          <h2 className="text-base text-white underline font-semibold tracking-wide uppercase">QUY TRÌNH CỦA CHÚNG TÔI</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold text-gray-900 sm:text-4xl">
-            How We Work
+          Cách Chúng Tôi Làm Việc
           </p>
         </div>
 
         <div className="mt-10">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             <div>
-              <h3 className="text-lg leading-6 font-medium text-gray-900">Consultation</h3>
-              <p className="mt-2 text-base text-gray-500">
-                We start with understanding your brand and goals to tailor a strategy that works for you.
+              <h3 className="text-xl leading-6 font-bold text-white">1. Tư Vấn <i className="fa-solid fa-comment"></i></h3>
+              <p className="mt-2 text-base text-white">
+              Chúng tôi bắt đầu bằng việc hiểu thương hiệu và mục tiêu của bạn để điều chỉnh chiến lược phù hợp với bạn.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg leading-6 font-medium text-gray-900">Execution</h3>
-              <p className="mt-2 text-base text-gray-500">
-                Our team implements the strategy with precision, ensuring your brand message reaches the right audience.
+              <h3 className="text-xl leading-6 font-bold text-white">2. Thực Thi <i className="fa-solid fa-user-check"></i></h3>
+              <p className="mt-2 text-base text-white">
+              Đội ngũ của chúng tôi triển khai chiến lược với độ chính xác, đảm bảo thông điệp thương hiệu của bạn đến được đúng đối tượng.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg leading-6 font-medium text-gray-900">Optimization</h3>
-              <p className="mt-2 text-base text-gray-500">
-                We continuously analyze and optimize the campaign to maximize results and drive growth.
+              <h3 className="text-xl leading-6 font-bold text-white">3. Tối Ưu Hóa <i className="fa-solid fa-check"></i></h3>
+              <p className="mt-2 text-base text-white">
+              Chúng tôi liên tục phân tích và tối ưu hóa chiến dịch để tối đa hóa kết quả và thúc đẩy tăng trưởng.
               </p>
             </div>
           </div>
@@ -124,15 +146,20 @@ const TestimonialsSection = () => {
     <div className="bg-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Customer Testimonials</h2>
+          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">FEEDBACK CỦA KHÁCH HÀNG</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold text-gray-900 sm:text-4xl">
-            What Our Clients Say
+            Những Gì Khách Hàng Nói Về Chúng Tôi
           </p>
         </div>
 
         <div className="mt-10">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="flex justify-center mb-4">
+                {[...Array(5)].map((_, index) => (
+                  <FaStar key={index} className="text-yellow-500" />
+                ))}
+              </div>
               <p className="text-lg font-medium text-gray-900">
                 "Their team helped us grow our social media presence exponentially. Highly recommended!"
               </p>
@@ -140,6 +167,11 @@ const TestimonialsSection = () => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="flex justify-center mb-4">
+                {[...Array(5)].map((_, index) => (
+                  <FaStar key={index} className="text-yellow-500" />
+                ))}
+              </div>
               <p className="text-lg font-medium text-gray-900">
                 "Professional, dedicated, and results-driven. We saw a significant boost in our engagement."
               </p>
@@ -147,6 +179,11 @@ const TestimonialsSection = () => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="flex justify-center mb-4">
+                {[...Array(5)].map((_, index) => (
+                  <FaStar key={index} className="text-yellow-500" />
+                ))}
+              </div>
               <p className="text-lg font-medium text-gray-900">
                 "The best team we've worked with. They understand our brand and deliver amazing results."
               </p>
@@ -159,45 +196,8 @@ const TestimonialsSection = () => {
   );
 };
 
-const ContactSection = () => {
-  return (
-    <div className="bg-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Contact Us</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold text-gray-900 sm:text-4xl">
-            Get in Touch
-          </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            We’d love to hear from you! Drop us a message and let’s start a conversation.
-          </p>
-        </div>
 
-        <div className="mt-10">
-          <form className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="col-span-1">
-              <label className="block text-sm font-medium text-gray-700">Name</label>
-              <input type="text" className="mt-1 p-3 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Your Name" />
-            </div>
-            <div className="col-span-1">
-              <label className="block text-sm font-medium text-gray-700">Email</label>
-              <input type="email" className="mt-1 p-3 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Your Email" />
-            </div>
-            <div className="col-span-1">
-              <label className="block text-sm font-medium text-gray-700">Message</label>
-              <textarea className="mt-1 p-3 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" rows="4" placeholder="Your Message"></textarea>
-            </div>
-          </form>
-          <div className="text-center mt-8">
-            <button className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Send Message
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 const FullPage = () => {
   return (
@@ -205,7 +205,7 @@ const FullPage = () => {
       <ServicesSection />
       <ProcessSection />
       <TestimonialsSection />
-      <ContactSection />
+
     </div>
   );
 };
