@@ -1,0 +1,49 @@
+@media only screen and (max-width: 46.1875em) {
+    .contact-button {
+        display: none;
+
+    }
+    .responsive-section {
+        padding: 2rem; /* Adjust padding for smaller screens */
+      }
+      
+      .responsive-section .image-container {
+        height: 100px;
+      }
+      
+      .responsive-section .text-container {
+        text-align: center; /* Center align text on smaller screens */
+        margin-left: 0; /* Remove the left margin */
+        padding: 1rem; /* Adjust padding for text container */
+        text-align: justify;
+      }
+      
+      .responsive-section h2 {
+        font-size: 2rem; /* Reduce heading size for smaller screens */
+        margin-bottom: 1rem; /* Adjust spacing below heading */
+        
+      }
+      
+      .responsive-section p {
+        font-size: 1.25rem; /* Reduce paragraph font size */
+        margin-bottom: 1rem; /* Adjust spacing below paragraphs */
+      }
+      
+      .responsive-section .stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* Use two columns layout */
+    gap: 1rem; /* Adjust grid gap */
+      }
+      
+      .responsive-section .button {
+        margin-bottom: 1rem; /* Add space above the button */
+        padding: 0.75rem 1.5rem; /* Adjust button padding */
+        font-size: 1rem; /* Adjust button text size */
+      }
+      .text-mainpage {
+        font-size: 20px;
+      }
+      .intro-box {
+        height: 80vh;
+      }
+    
+}

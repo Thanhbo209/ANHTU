@@ -91,8 +91,8 @@ const Navlinks = () => {
     return (
         links.map((linkItem, index) => (
             <div key={index} className="">
-                <div className="px-3 text-left md:cursor-pointer group">
-                    <h1 className='py-7 cursor-pointer flex justify-between items-center md:pr-0 pr-5 group' onClick={() =>
+                <div className=" px-3 text-left md:cursor-pointer group">
+                    <h1 className='py-7  cursor-pointer flex justify-between items-center md:pr-0 pr-5 group' onClick={() =>
                         heading !== linkItem.name ? setHeading(linkItem.name) : setHeading('')
                     }>
                         {linkItem.name}
@@ -105,11 +105,11 @@ const Navlinks = () => {
                     </h1>
                     {linkItem.submenu && (
                         <div className="submenu">
-                            <div className="absolute top-14 hidden group-hover:md:block hover:md:block">
-                                <div className="py-1">
-                                    <div className="w-5 h-5 left-2  absolute bg-[#55ead4] shadow-2xl mt-1 rotate-45 "></div>
+                            <div className="absolute top-15 hidden group-hover:md:block bg-white z-1000 hover:md:block">
+                                <div className="">
+                                    <div className="w-4 h-2 left-3  absolute bg-white shadow-2xl  rotate-45 "></div>
                                 </div>
-                                <div className="bg-[#ffffff] p-5 grid grid-cols-3 gap-10 shadow-2xl rounded-xl">
+                                <div className="bg-white p-5 grid grid-cols-3 gap-10 shadow-2xl rounded-xl">
                                     {linkItem.sublinks.map((mysublinks, subIndex) => (
                                         <div key={subIndex} className="">
                                             <h1 className="text-lg font-bold">{mysublinks.Head}</h1>

@@ -7,7 +7,7 @@ import PhoneContact from '../picture/2934394.png';
 function Contact() {
   return (
     <div
-      className="relative flex items-center justify-center w-full h-screen bg-cover bg-center"
+      className="relative flex items-center justify-center w-full h-screen bg-cover bg- md:max-width-[795px]"
       style={{ backgroundImage: `url(https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)` }}
     >
       <div className="absolute inset-0 bg-black opacity-70"></div>
@@ -21,8 +21,8 @@ function Contact() {
           <h3>CHUYÊN CÁC DỊCH VỤ VỀ <span>MẠNG XÃ HỘI</span></h3>
         </div>
 
-        {/* Two Divs Structure */}
-        <div className="flex justify-center space-x-8">
+        {/* Responsive Structure */}
+        <div className="flex flex-col md:flex-row justify-center md:space-x-8 space-y-8 md:space-y-0">
           {/* First Div */}
           <div className="w-80 bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white transform transition-transform duration-300 hover:scale-105 hover:bg-opacity-30">
             <img src={FBContact} alt="Facebook" className="w-10 m-auto mb-2" />

@@ -1067,24 +1067,26 @@ if (!service) {
 
 <div className={`service-detail flex justify-center items-center p-[40px] ${gradientClass} h-[100vh]`}>
             {service ? (
-                <div className="service-detail-content flex flex-row items-center max-w-[1200px] p-[40px] rounded-[10px] shadow-xl">
-                    <div className="service-text flex-1 mr-[40px]">
-                        <h1 className={`${textClass} ${textDesc} service-title text-[2.5rem] text-[#333] mb-[20px] font-bold`}>{service.title}</h1>
-                        <p 
-                            className={`service-description ${textClass} text-[1.2rem] text-[#666] leading-[1.6] mb-[16px] w-[400px] text-justify mr-[100px]`} 
-                            dangerouslySetInnerHTML={{ __html: formattedDescription }}
-                        />
-                        <button 
-                            className={`service-button text-[#fff] py-2.5 px-5 border-none rounded-[23px] text-[1.1rem] font-bold ${buttonClass}`}
-                            onClick={scrollToSection} // Scrolls to the section when clicked
-                        >
-                            Chi Tiết Dịch Vụ
-                        </button>
-                    </div>
-                    <div className="service-image w-[300px] h-[auto]">
-                        <img src={service.image} alt={service.title} className='object-cover rounded-xl' />
-                    </div>
-                </div>
+                <div className="service-container flex flex-col md:flex-row md:items-center">
+    <div className="service-text flex-1 mb-8 md:mb-0 md:mr-[40px]">
+        <h1 className={`${textClass} ${textDesc} service-title text-[2.5rem] text-[#333] mb-[20px] font-bold`}>
+            {service.title}
+        </h1>
+        <p 
+            className={`service-description ${textClass} text-[1.2rem] text-[#666] leading-[1.6] mb-[16px] md:w-[400px] text-justify md:mr-[100px]`} 
+            dangerouslySetInnerHTML={{ __html: formattedDescription }}
+        />
+        <button 
+            className={`service-button text-[#fff] py-2.5 px-5 border-none rounded-[23px] text-[1.1rem] font-bold ${buttonClass}`}
+            onClick={scrollToSection} // Scrolls to the section when clicked
+        >
+            Chi Tiết Dịch Vụ
+        </button>
+    </div>
+    <div className="service-image md:w-auto w-full">
+        <img src={service.image} alt="Service" className="w-64 m-auto rounded-lg" />
+    </div>
+</div>
             ) : (
                 <div>
                     <h1>Dịch vụ không tồn tại</h1>
@@ -1097,7 +1099,7 @@ if (!service) {
 
             
            {/* Nút chính */}
-           <div className="fixed bottom-4 left-4 flex flex-col space-y-4">
+           <div className="contact-button fixed bottom-4 left-4 flex flex-col space-y-4">
                 <button 
                     onClick={() => toggleDialog('facebook')} 
                     className="bg-blue-500 text-white p-4 rounded-full shadow-lg"

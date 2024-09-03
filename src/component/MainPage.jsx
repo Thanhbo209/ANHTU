@@ -7,6 +7,8 @@ import zaloLogo from '../picture/Icon_of_Zalo.svg.webp';
 import phoneCall from '../picture/2934394.png';
 import FBProfileImg from '../picture/photo-1660924198520-85447f410eff.avif';
 import { useInView } from 'react-intersection-observer';
+import './MainPage.css';
+import TransparentImg from '../picture/1024px-HD_transparent_picture (1).png';
 
 const MainPage = () => {
   
@@ -15,8 +17,8 @@ const MainPage = () => {
       }, []);
 
       const services = [
-        { name: "Lên tích xanh Facebook", link: "/service-detail/facebook-verify" },
-        { name: "Lấy lại Facebook", link: "/service-detail/recover-facebook" },
+        { name: "Lên tích xanh Facebook", link: "/service-detail/len-tich-xanh-facebook" },
+        { name: "Quảng Cáo Facebook ADS", link: "/service-detail/quang-cao-facebook-ads" },
         { name: "Tăng Follower, Like FanPage", link: "/service-detail/increase-follower" },
         { name: "Tăng Comment", link: "/service-detail/increase-comment" },
         // Add more services as needed...
@@ -156,9 +158,9 @@ const handleInputChange = (e) => {
     return (
         <div>
         
-        <section className="h-screen flex items-center justify-center bg-white" data-aos="fade-right">
+        <section className="intro-box h-screen flex items-center justify-center bg-white" data-aos="fade-right">
     <div className="text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
+        <h1 className="text-mainpage text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
             Chào mừng bạn đến với dịch vụ <span className="text-teal-500"><br />MXH</span> của chúng tôi
         </h1>
         <div className="mt-8 w-3/4 md:w-1/2 mx-auto flex items-center space-x-4">
@@ -201,20 +203,20 @@ const handleInputChange = (e) => {
 </section>
 
 
-    <section className="h-screen flex items-center justify-center bg-teal-500">
+    <section className="responsive-section h-screen flex items-center justify-center bg-teal-500 bg-cover "   style={{ backgroundImage: `url(${FBProfileImg})` }}>
   <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0">
     <div
-      className="w-full md:w-1/2 mb-6 md:mb-0"
+      className="image-container w-full md:w-1/2 mb-6 md:mb-0"
       data-aos="fade-down"
       data-aos-delay="200"
     >
       <img
-        src={FBProfileImg}
+        src={TransparentImg}
         alt="About Me"
-        className="rounded-lg shadow-lg object-cover w-full h-[650px] p-10 "
+        className="rounded-lg  object-cover w-full h-[650px]"
       />
     </div>
-    <div className="w-full md:w-1/2 md:ml-16 text-white"> {/* Điều chỉnh khoảng cách */}
+    <div className="text-container w-full md:w-1/2 md:ml-16 text-white"> {/* Điều chỉnh khoảng cách */}
       <h2
         className="text-4xl font-bold mb-4"
         data-aos="fade-down"
@@ -236,16 +238,16 @@ const handleInputChange = (e) => {
       >
         {/* Bạn cũng có thể thêm số liệu như phần thống kê */}
       <p
-        className="text-base mb-4"
+        className="text-description text-base mb-4"
         data-aos="fade-left"
         data-aos-delay="1000"
       >
         Bạn cần tăng lượng follower? quản lý fanpage? hay chạy quảng cáo hiệu quả? đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn đạt được mục tiêu kinh doanh.
       </p>
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
+        <div ref={ref} className="stats-grid grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <h2 className="text-4xl font-bold text-gray-900">
+              <h2 className="text-4xl font-bold text-white">
                 {inView ? <AnimatedCounter value={stat.value} /> : 0}+
               </h2>
               <p className="mt-2 text-lg text-gray-600">{stat.label}</p>
@@ -254,7 +256,7 @@ const handleInputChange = (e) => {
         </div> 
       </div>
       <button
-        className="relative px-6 py-2 border-2 border-white text-white font-semibold rounded overflow-hidden group"
+        className="button relative px-6 py-2 border-2 border-white text-white font-semibold rounded overflow-hidden group"
         data-aos="fade-right"
         data-aos-delay="1200"
       >
@@ -360,24 +362,24 @@ const handleInputChange = (e) => {
 
 
      {/* Nút chính */}
-     <div className="fixed bottom-4 left-4 flex flex-col space-y-4">
+     <div className="contact-button fixed bottom-4 left-4 flex flex-col space-y-4">
                 <button 
                     onClick={() => toggleDialog('facebook')} 
                     className="bg-blue-500 text-white p-4 rounded-full shadow-lg"
                 >
-                    <img src={fbLogo} alt="Facebook" className="w-6 h-6" />
+                    <img src={fbLogo} alt="Facebook" className="w-6 h-6 " />
                 </button>
                 <button 
                     onClick={() => toggleDialog('email')} 
                     className="bg-blue-500 text-white p-4 rounded-full shadow-lg"
                 >
-                    <img src={zaloLogo} alt="Email" className="w-6 h-6" />
+                    <img src={zaloLogo} alt="Email" className="w-6 h-6 " />
                 </button>
                 <button 
                     onClick={() => toggleDialog('zalo')} 
                     className="bg-green-500 text-white p-4 rounded-full shadow-lg"
                 >
-                    <img src={phoneCall} alt="Zalo" className="w-6 h-6" />
+                    <img src={phoneCall} alt="Zalo" className="w-6 h-6 animate-bounce" />
                 </button>
             </div>
             
@@ -395,7 +397,7 @@ const handleInputChange = (e) => {
                     
                     <ul className="mt-4">
                         <li className="flex items-center mb-2 p-3">
-                            <img src={fbLogo} alt="Facebook" className="w-6 h-6 mr-2" />
+                            <img src={fbLogo} alt="Facebook" className="w-6 h-6 mr-2  " />
                             <a href=" https://www.facebook.com/LVTMMO" target="_blank"  className='font-bold'>
                            Facebook
                             </a>
@@ -432,8 +434,8 @@ const handleInputChange = (e) => {
                         </button>
                     </div>
                     <ul className="mt-4">
-                        <li className="flex items-center mb-2 p-3">
-                            <img src={phoneCall} alt="Zalo" className="w-6 h-6 mr-2" />
+                        <li className="flex items-center mb-2 p-3 ">
+                            <img src={phoneCall} alt="Zalo" className="w-6 h-6 mr-2 " />
                             <span className='font-bold text-center'>0392778939</span>
                         </li>
                     </ul>

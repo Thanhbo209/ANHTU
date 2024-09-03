@@ -1,7 +1,7 @@
 
 import './App.css';
 import Navbar from './component/Navbar';
-import {  Routes, Route } from 'react-router-dom';
+import {  Routes, Route, Navigate  } from 'react-router-dom';
 import './index.css';
 import ServiceDetail from './component/ServiceDetail';
 import MainPage from './component/MainPage';
@@ -19,13 +19,13 @@ function App() {
 
 <Routes>
 <Route path="/chi-tiet" element={<ServicesSection />}/>
-<Route index="/" element={<MainPage />}/>
+<Route path="/" element={<Navigate to="/trang-chu" />}/>
 <Route path="/trang-chu" element={<MainPage />}/>
 <Route path="/thiet-ke-trang-web" element={<WebsiteDesigner />}/>
 <Route path="/lien-he" element={<Contact />}/>
 <Route path="/:serviceName" element={<ServiceDetail />} />
 <Route path="/search-results" element={<SearchResult />} />
-<Route path="/service-detail/:serviceName" element={<ServiceDetail />} />
+
 
 </Routes>
 

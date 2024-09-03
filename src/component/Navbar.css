@@ -1,0 +1,9 @@
+@media only screen and (max-width: 46.1875em) {
+ .navbar-one {
+    background: transparent;
+    box-shadow: none;
+ }
+ .nav-logo {
+    display: none;
+ }
+}
